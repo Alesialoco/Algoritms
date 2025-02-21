@@ -4,6 +4,10 @@
 int find_element(const std::vector<int>& masive, int need_elem){
     int left = 0;
     int right = masive.size() - 1;
+    if (need_elem == masive[left])
+        return left;
+    else if (need_elem == masive[right])
+        return right;
     while (left <= right){
         int middle = (left + right) >> 1;
         if (need_elem == masive[middle])
@@ -23,4 +27,3 @@ int find_element(const std::vector<int>& masive, int need_elem){
     }
     return -1;
 }
-
